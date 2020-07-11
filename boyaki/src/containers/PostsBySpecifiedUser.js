@@ -5,8 +5,8 @@ import React, { useState, useEffect, useReducer } from 'react';
 
 import API, { graphqlOperation } from '@aws-amplify/api';
 import Auth from '@aws-amplify/auth';
-import { useParams, useHistory } from 'react-router';
-import { Box, Button} from '@material-ui/core';
+import { useParams } from 'react-router';
+import { Button } from '@material-ui/core';
 
 import { listPostsBySpecificOwner, getFollowRelationship } from '../graphql/queries';
 import { onCreatePost } from '../graphql/subscriptions';
@@ -110,6 +110,7 @@ export default function PostsBySpecifiedUser() {
       }
     });
     return () => subscription.unsubscribe();
+    // eslint-disable-next-line
   }, []);
 
 
